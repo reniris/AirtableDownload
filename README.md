@@ -19,7 +19,12 @@ AirtableDownload is available for download and installation as [NuGet packages.]
     var api_service = provider.GetRequiredService<IAirtableServices>();
 
     //Execute API
-    var tablestr = await api_service.DownloadTableToFile(path,appKey,baseId,table,view);        
+    //指定のテーブルの特定のビューのJSONテキストをファイルに書き込み
+    var result1 = await api_service.DownloadTableToFile(path,appKey,baseId,table,view);
+    //指定のテーブルの特定のビューのJSONテキストを取得
+    var result2 = await api_service.DownloadTableJson(appKey,baseId,table,view);
+    //指定のテーブルの特定のビューをDataClassにマッピング
+    var result3 = await api_service.LoadTable<DataClass>(appKey,baseId,table,view);       
 ```
 
 ## License
