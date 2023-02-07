@@ -16,10 +16,10 @@ internal class Program
 
     private static async Task Main(string[] args)
     {
-        Trace.Listeners.Add(new System.Diagnostics.TextWriterTraceListener(Console.Out));
+        Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
         Debug.AutoFlush = true;
 
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("Hello, AirtableDownload!");
 
         string basedir = Path.GetDirectoryName(Environment.ProcessPath)!;
         //appsettings.jsonとsecret.jsonを使えるようにする
@@ -34,16 +34,16 @@ internal class Program
         services.AddHttpClient<IAirtableServices, AirtableServices>()
             .SetHandlerLifetime(TimeSpan.FromMinutes(5));
         //サービスのインスタンスを取得
-        var provider = services.BuildServiceProvider();
-        var service = provider.GetRequiredService<IAirtableServices>();
+        var api_service = services.BuildServiceProvider().GetRequiredService<IAirtableServices>();
 
+        //configからテーブル名とビュー名を抽出
         var param_tv = config.GetSection(APIPARAMS_SECTION).GetChildren()
             .Select(s => new { table = s[APIPARAMS_TABLE], view = s[APIPARAMS_VIEW] });
 
         foreach (var tv in param_tv)
         {
             //サービスからテーブルデータを落とすメソッドを実行
-            var tablestr = await service.DownloadTableToFile(
+            var tablestr = await api_service.DownloadTableToFile(
                 Path.Combine(basedir, $"{tv.table}.json"),
                 config[AIRTABLEKEY_APITOKEN],
                 config[AIRTABLEKEY_BASEID],
