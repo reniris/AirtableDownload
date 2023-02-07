@@ -1,5 +1,5 @@
-# AirtableDownload
-Airtable‚Ìƒe[ƒuƒ‹ƒf[ƒ^‚ğ“Ç‚Şƒ‰ƒCƒuƒ‰ƒŠ
+ï»¿# AirtableDownload
+Airtableã®ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
 
 ## Usage
 ```csharp
@@ -29,4 +29,4 @@ Airtable‚Ìƒe[ƒuƒ‹ƒf[ƒ^‚ğ“Ç‚Şƒ‰ƒCƒuƒ‰ƒŠ
 * [Airtable.Net](https://github.com/ngocnicholas/airtable.net)
 * [AirtableClient](https://github.com/yKimisaki/AirtableClient)
 
-* [IHttpClientFactory ‚ğg‚Á‚Ä¡‚Í‚±‚êˆê‘ğ‚Æv‚Á‚½˜b](https://qiita.com/SY81517/items/5253e8f363f7275b3588)
+* [IHttpClientFactory ã‚’ä½¿ã£ã¦ä»Šã¯ã“ã‚Œä¸€æŠã¨æ€ã£ãŸè©±](https://qiita.com/SY81517/items/5253e8f363f7275b3588)
