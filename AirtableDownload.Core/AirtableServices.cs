@@ -14,7 +14,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.IO;
 
-namespace AirtableDownload.Core
+namespace AirtableDownload
 {
     public interface IAirtableServices
     {

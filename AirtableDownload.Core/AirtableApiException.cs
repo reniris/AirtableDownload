@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace AirtableDownload.Core
+namespace AirtableDownload
 {
     public abstract class AirtableApiException : Exception
     {

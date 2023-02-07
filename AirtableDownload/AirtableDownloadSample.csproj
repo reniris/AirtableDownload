@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AirtableDownload.Core\AirtableDownload.Core.csproj" />
+    <ProjectReference Include="..\AirtableDownload.Core\AirtableDownload.csproj" />
   </ItemGroup>
 
   <ItemGroup>
