@@ -58,7 +58,7 @@ namespace AirtableDownload
         /// <returns>
         ///   テーブルデータのJSONテキスト
         /// </returns>
-        public async Task<string> DownloadTableJson(string apitoken, string baseId, string tableName, string view)
+        public async Task<string> DownloadTableJson(string apitoken, string baseId, string tableName, string view = null)
         {
             var result = await LoadTable<JsonElement>(apitoken, baseId, tableName, view);
             return string.Join("\n", result);
