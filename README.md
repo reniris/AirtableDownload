@@ -2,6 +2,7 @@
 Airtableのテーブルデータを読むライブラリ
 
 ## Usage
+AirtableDownload is available for download and installation as [NuGet packages.](https://www.nuget.org/packages/AirtableDownload/)
 ```csharp
     readonly string appKey = YOUR_PERSONAL_ACCESS_TOKEN;
     readonly string baseId = TARGET_BASE_ID;
