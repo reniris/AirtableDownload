@@ -47,4 +47,4 @@ AirtableDownload is available for download and installation as [NuGet packages.]
 * [Airtable.Net](https://github.com/ngocnicholas/airtable.net)
 * [AirtableClient](https://github.com/yKimisaki/AirtableClient)
 
-* [IHttpClientFactory を使って今はこれ一択と思った話](https://qiita.com/SY81517/items/5253e8f363f7275b3588)
+* [IHttpClientFactory を使って今はこれ一択と思った話](https://qiita.com/TsuyoshiUshio@github/items/7092fbc510772ce5db63)
