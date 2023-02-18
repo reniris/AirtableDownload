@@ -1,17 +1,17 @@
-name: .NET Core
+﻿name: .NET Core
 
 on:
   push:
     tags:
       - 'v*'
-env:
-  DOTNET_VERSION: '6.0.x' # The .NET SDK version to use
 jobs:
   build:
 
     runs-on: ubuntu-latest
     env:
       DOTNET_NOLOGO: true
+      DOTNET_VERSION: '6.0.x' # The .NET SDK version to use
+      ProjectPath: "${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}"	# csprojファイルの存在するフォルダの相対パス
 
     steps:
     - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore -p:Version=${GITHUB_REF/refs\/tags\/v/}
 
     - name: Packaging
-      run: dotnet pack --include-symbols --configuration Release --no-build --output nupkgs -p:PackageVersion=${GITHUB_REF/refs\/tags\/v/}
+      run: dotnet pack ${{ env.ProjectPath }} --include-symbols --configuration Release --no-build --output nupkgs -p:PackageVersion=${GITHUB_REF/refs\/tags\/v/}
 
     - name: Nuget Push
       run:  dotnet nuget push nupkgs/*.nupkg -k ${{ secrets.NUGET_API_KEY }}  -s https://api.nuget.org/v3/index.json
